@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../../../public/assets/images/logo.png';
+import logo_sm from '../../../../../public/assets/images/logo_sm.png';
+import logo_dark from '../../../../../public/assets/images/logo-dark.png';
+import logo_sm_dark from '../../../../../public/assets/images/logo_sm_dark.png';
+
 function Sidebar() {
     return (
             <div className="leftside-menu">
@@ -9,15 +13,15 @@ function Sidebar() {
                         <img src={logo} alt="" height={16} />
                     </span>
                     <span className="logo-sm">
-                        <img src="assets/images/logo_sm.png" alt="" height={16} />
+                        <img src={logo_sm} alt="" height={16} />
                     </span>
                 </Link>
                 <Link to="index.html" className="logo text-center logo-dark">
                     <span className="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height={16} />
+                        <img src={logo_dark} alt="" height={16} />
                     </span>
                     <span className="logo-sm">
-                        <img src="assets/images/logo_sm_dark.png" alt="" height={16} />
+                        <img src={logo_sm_dark} alt="" height={16} />
                     </span>
                 </Link>
                 <div className="h-100" id="leftside-menu-container" data-simplebar="">
