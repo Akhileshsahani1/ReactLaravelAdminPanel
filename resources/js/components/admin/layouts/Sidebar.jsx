@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../../../public/assets/images/logo.png';
 function Sidebar() {
     return (
             <div className="leftside-menu">
                 <Link to="index.html" className="logo text-center logo-light">
                     <span className="logo-lg">
-                        <img src="assets/images/logo.png" alt="" height={16} />
+                        <img src={logo} alt="" height={16} />
                     </span>
                     <span className="logo-sm">
                         <img src="assets/images/logo_sm.png" alt="" height={16} />
