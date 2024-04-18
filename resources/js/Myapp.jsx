@@ -10,16 +10,7 @@ import Content from './components/admin/layouts/Content.jsx';
 export default function Myapp() {
     return (
         <BrowserRouter>
-            <div className="wrapper">
-                <Sidebar />
-                <div className="content-page">
-                    <div className="content">
-                        <Navbar />
-                        <Content />
-                    </div>
-                    <Footer />
-                </div>
-            </div>
+            <Content />
         </BrowserRouter>
     );
 }
