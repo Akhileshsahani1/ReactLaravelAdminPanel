@@ -1,12 +1,43 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Formik, useFormik } from "formik";
+import axios from "axios";
+import { LoginSchema, REACT_APP_API } from "../schema/index.jsx";
 
-const InitialValue ={
+const InitialValue = {
     email: "",
     password: "",
-   
+
 }
-function Login() {
+function Login({ setToken }) {
+
+    const navigate = useNavigate();
+
+    const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+        initialValues: InitialValue,
+        validationSchema: LoginSchema,
+        onSubmit: (values, action) => {
+            axios.post(`${REACT_APP_API}/login`, values).then((res) => {
+                localStorage.setItem('token', res.data.access_token);
+                setToken(res.data.access_token)
+                const token = localStorage.getItem('token')
+
+                if (!token) {
+                    alert('Unable to login. Please try after some time.');
+                    localStorage.clear();
+                    navigate('/');
+                } else {
+                    setTimeout(() => {
+                        navigate('/dashboard');
+                    }, 500);
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+            action.resetForm();
+        }
+
+    });
     return (
         <>
             <meta charSet="utf-8" />
@@ -51,7 +82,7 @@ function Login() {
                             <p className="text-muted mb-4">
                                 Enter your email address and password to access account.
                             </p>
-                            <form action="#">
+                            <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
                                     <label htmlFor="emailaddress" className="form-label">
                                         Email address
@@ -60,9 +91,13 @@ function Login() {
                                         className="form-control"
                                         type="email"
                                         id="emailaddress"
-                                        required=""
+                                        name="email"
+                                        onChange={handleChange}
+                                        value={values.email}
                                         placeholder="Enter your email"
+                                        onBlur={handleBlur}
                                     />
+                                    {errors.email && touched.email ? <div className="text-danger">{errors.email}</div> : null}
                                 </div>
                                 <div className="mb-3">
                                     <a href="pages-recoverpw-2.html" className="text-muted float-end">
@@ -74,10 +109,16 @@ function Login() {
                                     <input
                                         className="form-control"
                                         type="password"
-                                        required=""
-                                        id="password"
+                                        name="password"
                                         placeholder="Enter your password"
+                                        id="password"
+                                        autocomplete="current-password"
+                                        onChange={handleChange}
+                                        value={values.password}
+                                        onBlur={handleBlur}
                                     />
+
+                                    {errors.password && touched.password ? <div className="text-danger">{errors.password}</div> : null}
                                 </div>
                                 <div className="mb-3">
                                     <div className="form-check">
@@ -93,7 +134,7 @@ function Login() {
                                 </div>
                                 <div className="d-grid mb-0 text-center">
                                     <button className="btn btn-primary" type="submit">
-                                        <i className="mdi mdi-login" /> Log In{" "}
+                                        <i className="mdi mdi-login" /> Log In
                                     </button>
                                 </div>
                                 <div className="text-center mt-4">
@@ -136,25 +177,16 @@ function Login() {
                             </form>
                             <footer className="footer footer-alt">
                                 <p className="text-muted">
-                                    Don't have an account?{" "}
+                                    Don't have an account?
                                     <a href="pages-register-2.html" className="text-muted ms-1">
                                         <b>Sign Up</b>
                                     </a>
                                 </p>
                             </footer>
-                        </div>{" "}
-                    </div>{" "}
+                        </div>
+                    </div>
                 </div>
-                <div className="auth-fluid-right text-center">
-                    <div className="auth-user-testimonial">
-                        <h2 className="mb-3">I love the color!</h2>
-                        <p className="lead">
-                            <i className="mdi mdi-format-quote-open" /> It's a elegent templete. I
-                            love it very much! . <i className="mdi mdi-format-quote-close" />
-                        </p>
-                        <p>- Hyper Admin User</p>
-                    </div>{" "}
-                </div>
+
             </div>
         </>
 

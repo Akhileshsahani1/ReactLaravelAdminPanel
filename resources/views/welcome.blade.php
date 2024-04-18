@@ -12,11 +12,10 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
         <link href="{{asset('assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style" />
-
     </head>
-    <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}' id="root">
        
-           <div id="root"></div>
+          
         @viteReactRefresh
         @vite('resources/js/app.js')
         <script src="{{asset('assets/js/vendor.min.js')}}"></script>
@@ -25,6 +24,5 @@
         <script src="{{asset('assets/js/vendor/jquery-jvectormap-world-mill-en.js')}}"></script>
         <script src="{{asset('assets/js/vendor/apexcharts.min.js')}}"></script>
         <script src="{{asset('assets/js/pages/demo.dashboard.js')}}"></script>
-      
     </body>
 </html>
