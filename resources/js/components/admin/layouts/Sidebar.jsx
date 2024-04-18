@@ -28,7 +28,7 @@ function Sidebar() {
                 <ul className="side-nav">
                     <li className="side-nav-title side-nav-item">Navigation</li>
                     <li class="side-nav-item menuitem-active">
-                        <NavLink to="/" class="side-nav-link active">
+                        <NavLink to="/dashboard" class="side-nav-link active">
                             <i class="uil-home-alt"></i>
                             <span> Dashboards </span>
                         </NavLink>

@@ -14,7 +14,7 @@ function Content() {
                 <div className="content">
                     <Navbar />
                     <Routes>
-                        <Route path="/" element={<Dashboard />} />
+                        <Route index element={<Dashboard />} />
                     </Routes>
                 </div>
                 <Footer />
