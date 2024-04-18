@@ -26,12 +26,11 @@ function Sidebar() {
             </NavLink>
             <div className="h-100" id="leftside-menu-container" data-simplebar="">
                 <ul className="side-nav">
-                    <li className="side-nav-title side-nav-item">Navigation</li>
-                    <li class="side-nav-item menuitem-active">
-                        <NavLink to="/dashboard" class="side-nav-link active">
+                    <li className="side-nav-item">
+                        <a to="/dashboard" class="side-nav-link">
                             <i class="uil-home-alt"></i>
-                            <span> Dashboards </span>
-                        </NavLink>
+                            <span> Dashboard </span>
+                        </a>
                     </li>
                 </ul>
                 <div className="clearfix" />
