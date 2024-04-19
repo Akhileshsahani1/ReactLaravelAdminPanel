@@ -16,16 +16,6 @@ function Navbar() {
                     >
                         <i className="dripicons-search noti-icon" />
                     </Link>
-                    <div className="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
-                        <form className="p-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Search ..."
-                                aria-label="Recipient's username"
-                            />
-                        </form>
-                    </div>
                 </li>
               
                 <li className="dropdown notification-list">
@@ -72,84 +62,7 @@ function Navbar() {
             <button className="button-menu-mobile open-left">
                 <i className="mdi mdi-menu" />
             </button>
-            <div className="app-search dropdown d-none d-lg-block">
-                <form>
-                    <div className="input-group">
-                        <input
-                            type="text"
-                            className="form-control dropdown-toggle"
-                            placeholder="Search..."
-                            id="top-search"
-                        />
-                        <span className="mdi mdi-magnify search-icon" />
-                        <button className="input-group-text btn-primary" type="submit">
-                            Search
-                        </button>
-                    </div>
-                </form>
-                <div
-                    className="dropdown-menu dropdown-menu-animated dropdown-lg"
-                    id="search-dropdown"
-                >
-                    {/* item*/}
-                    <div className="dropdown-header noti-title">
-                        <h5 className="text-overflow mb-2">
-                            Found <span className="text-danger">17</span> results
-                        </h5>
-                    </div>
-                    {/* item*/}
-                    <Link href="javascript:void(0);" className="dropdown-item notify-item">
-                        <i className="uil-notes font-16 me-1" />
-                        <span>Analytics Report</span>
-                    </Link>
-                    {/* item*/}
-                    <Link href="javascript:void(0);" className="dropdown-item notify-item">
-                        <i className="uil-life-ring font-16 me-1" />
-                        <span>How can I help you?</span>
-                    </Link>
-                    {/* item*/}
-                    <Link href="javascript:void(0);" className="dropdown-item notify-item">
-                        <i className="uil-cog font-16 me-1" />
-                        <span>User profile settings</span>
-                    </Link>
-                    {/* item*/}
-                    <div className="dropdown-header noti-title">
-                        <h6 className="text-overflow mb-2 text-uppercase">Users</h6>
-                    </div>
-                    <div className="notification-list">
-                        {/* item*/}
-                        <Link href="javascript:void(0);" className="dropdown-item notify-item">
-                            <div className="d-flex">
-                                <img
-                                    className="d-flex me-2 rounded-circle"
-                                    src="assets/images/users/avatar-2.jpg"
-                                    alt="Generic placeholder image"
-                                    height={32}
-                                />
-                                <div className="w-100">
-                                    <h5 className="m-0 font-14">Erwin Brown</h5>
-                                    <span className="font-12 mb-0">UI Designer</span>
-                                </div>
-                            </div>
-                        </Link>
-                        {/* item*/}
-                        <Link href="javascript:void(0);" className="dropdown-item notify-item">
-                            <div className="d-flex">
-                                <img
-                                    className="d-flex me-2 rounded-circle"
-                                    src="assets/images/users/avatar-5.jpg"
-                                    alt="Generic placeholder image"
-                                    height={32}
-                                />
-                                <div className="w-100">
-                                    <h5 className="m-0 font-14">Jacob Deo</h5>
-                                    <span className="font-12 mb-0">Developer</span>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     );
 }
