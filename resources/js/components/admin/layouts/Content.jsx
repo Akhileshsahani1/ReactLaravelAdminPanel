@@ -6,6 +6,7 @@ import Login from "../auth/Login";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import User from "../dashboard/pages/User";
 function Content() {
     return (
         <div className="wrapper">
@@ -15,6 +16,8 @@ function Content() {
                     <Navbar />
                     <Routes>
                         <Route index element={<Dashboard />} />
+                        <Route path="/dashboard/users" element={<User />} />
+                        
                     </Routes>
                 </div>
                 <Footer />

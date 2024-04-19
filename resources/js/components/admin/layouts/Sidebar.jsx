@@ -32,6 +32,12 @@ function Sidebar() {
                             <span> Dashboard </span>
                         </Link>
                     </li>
+                    <li className="side-nav-item">
+                        <Link to="/dashboard/users" class="side-nav-link nav-link">
+                            <i class="uil-user"></i>
+                            <span> Users </span>
+                        </Link>
+                    </li>
                 </ul>
                 <div className="clearfix" />
             </div>
