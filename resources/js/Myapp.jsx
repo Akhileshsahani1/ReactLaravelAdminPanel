@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "react-router-dom";
-import { createRoot } from 'react-dom/client';
-import Navbar from './components/admin/layouts/Navbar.jsx';
-import Sidebar from './components/admin/layouts/Sidebar.jsx';
-import Footer from './components/admin/layouts/Footer.jsx';
+import { Navigate, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from './components/admin/auth/Login.jsx';
 import Dashboard from './components/admin/dashboard/pages/Dashboard.jsx';
+import { Layout } from "./components/admin/layouts/Layout.jsx";
+import User from "./components/admin/dashboard/pages/User.jsx";
 import Content from "./components/admin/layouts/Content.jsx";
+import { createRoot } from 'react-dom/client'; // Import createRoot from the correct location
 
-export default function Myapp() {
+export default function Myapp(props) {
+    const [token, setToken] = useState("");
 
-    const [token, setToken] = useState("")
-    const [userGetData, setUserGetData] = useState(null);
+    useEffect(() => {
+        getToken();
+    }, []);
+
+    const getToken = () => {
+        setToken(localStorage.getItem("token"));
+    }
 
     function PrivateRoute({ children }) {
         const auth = localStorage.getItem("token");
@@ -23,24 +28,18 @@ export default function Myapp() {
         return !auth ? children : <Navigate to="/dashboard" />;
     }
 
-    const getToken = () => {
-        setToken(localStorage.getItem("token"))
-    }
-    useEffect(() => {
-        getToken()
-    }, []);
-
     return (
-        <BrowserRouter>
+        <Router>
             <Routes>
                 <Route path="/" element={<PublicRoute><Login setToken={setToken} /></PublicRoute>} />
-                <Route path="/dashboard*" element={<PrivateRoute><Content /></PrivateRoute>} />
+                <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                <Route path="/dashboard/users" element={<PrivateRoute><User /></PrivateRoute>} />
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
-
-    
 }
-const container = document.getElementById('root');
-const root = createRoot(container);
-root.render(<Myapp />);
+
+const container = document.createElement('div'); // Create a container eement
+document.body.appendChild(container); // Append the container to the body
+const root = createRoot(container); // Use the container as the root element
+root.render(<Myapp />); // Render your app into the container

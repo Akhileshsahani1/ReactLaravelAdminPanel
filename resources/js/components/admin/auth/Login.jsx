@@ -1,6 +1,8 @@
-import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React,{useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, useFormik } from "formik";
+import Myapp from "../../../Myapp.jsx";
+
 import axios from "axios";
 import { LoginSchema, REACT_APP_API } from "../schema/index.jsx";
 
@@ -10,9 +12,9 @@ const InitialValue = {
 
 }
 function Login({ setToken }) {
-
+    const[user,SetUser] = useState([]);
     const navigate = useNavigate();
-
+    
     const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: InitialValue,
         validationSchema: LoginSchema,
@@ -21,13 +23,15 @@ function Login({ setToken }) {
                 localStorage.setItem('token', res.data.access_token);
                 setToken(res.data.access_token)
                 const token = localStorage.getItem('token')
-
+               
                 if (!token) {
                     alert('Unable to login. Please try after some time.');
                     localStorage.clear();
                     navigate('/');
                 } else {
                     setTimeout(() => {
+                        SetUser(res.data.user);
+                        <Myapp user={user} />
                         navigate('/dashboard');
                     }, 500);
                 }

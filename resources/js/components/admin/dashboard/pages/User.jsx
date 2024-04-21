@@ -1,6 +1,8 @@
 import React from "react";
+import{Layout} from "../../layouts/Layout.jsx";
 function User() {
     return (
+        <Layout>
         <div className="container-fluid">
         <div className="row">
             <div className="col-12">
@@ -9,8 +11,9 @@ function User() {
                 </div>
             </div>
         </div>
+       
     </div>
-
+    </Layout>
       );
 }
 
