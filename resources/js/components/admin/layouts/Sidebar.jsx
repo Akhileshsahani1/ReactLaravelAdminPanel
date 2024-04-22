@@ -5,6 +5,10 @@ import logo_sm from '../../../../../public/assets/images/logo_sm.png';
 import logo_dark from '../../../../../public/assets/images/logo-dark.png';
 import logo_sm_dark from '../../../../../public/assets/images/logo_sm_dark.png';
 import "../../../../../public/assets/css/app.min.css";
+import "../../../../../public/assets/css/vendor/jquery-jvectormap-1.2.2.css";
+import "../../../../../public/assets/css/icons.min.css";
+import "../../../../../public/assets/css/app-dark.min.css";
+
 
 function Sidebar() {
     return (

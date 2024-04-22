@@ -3,6 +3,7 @@ import { Layout } from "../../layouts/Layout.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { REACT_APP_API } from "../../schema/index.jsx";
+import Filter from "./users/Filter.jsx";
 
 function User() {
     const [user, setUsers] = useState([]);
@@ -42,6 +43,7 @@ function User() {
                         </div>
                     </div>
                 </div>
+                 <Filter />
                 <div className="row">
                     <div className="col-12">
                         <div className="card">
