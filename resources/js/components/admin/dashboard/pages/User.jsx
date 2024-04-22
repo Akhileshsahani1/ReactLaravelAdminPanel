@@ -16,8 +16,7 @@ function User() {
         const token = localStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
         axios.get(`${REACT_APP_API}/getUser`, { headers }).then((res) => {
-            setUsers(res.data.users.data)
-        console.log(res.data,"dddddddddddd");
+            setUsers(res.data.users.data);
         }).catch((error) => {
             console.error('Error fetching user:', error);
         });
