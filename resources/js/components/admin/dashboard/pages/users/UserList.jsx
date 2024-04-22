@@ -1,21 +1,9 @@
-import React,{useState,useEffect}from "react";
-import { Layout } from "../../layouts/Layout.jsx";
+import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { REACT_APP_API } from "../../schema/index.jsx";
-
-function User() {
-    const [users,setUser] = useState([]);
-    const token = localStorage.getItem('token');
-    useEffect(()=>{
-        axios.post(`${REACT_APP_API}/getUser`, token).then((res)=>{
-            console.log(res,"console");
-             
-        });
-    },[]);
+import {}
+function UserList() {
 
     return (
-        <Layout>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
@@ -31,6 +19,7 @@ function User() {
                                     id="delete-all"
                                 >
                                     <i className="mdi mdi-delete" /> Delete
+                                
                                 </Link>
                             </div>
                             <h4 className="page-title">Account Users</h4>
@@ -66,9 +55,7 @@ function User() {
                                                     <th />
                                                 </tr>
                                             </thead>
-                                            <tbody>
-
-                                            </tbody>
+                                            <tbody></tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -77,8 +64,7 @@ function User() {
                     </div>
                 </div>
             </div>
-        </Layout>
     );
 }
 
-export default User;
+export default UserList;

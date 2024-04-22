@@ -5,7 +5,7 @@ import Dashboard from './components/admin/dashboard/pages/Dashboard.jsx';
 import { Layout } from "./components/admin/layouts/Layout.jsx";
 import User from "./components/admin/dashboard/pages/User.jsx";
 import Content from "./components/admin/layouts/Content.jsx";
-import { createRoot } from 'react-dom/client'; // Import createRoot from the correct location
+import { createRoot } from 'react-dom/client'; 
 
 export default function Myapp(props) {
     const [token, setToken] = useState("");
@@ -39,7 +39,7 @@ export default function Myapp(props) {
     );
 }
 
-const container = document.createElement('div'); // Create a container eement
-document.body.appendChild(container); // Append the container to the body
-const root = createRoot(container); // Use the container as the root element
+const container = document.createElement('div');
+document.body.appendChild(container); 
+const root = createRoot(container); 
 root.render(<Myapp />); // Render your app into the container

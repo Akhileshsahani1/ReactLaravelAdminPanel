@@ -29,7 +29,7 @@ function Navbar() {
                     >
                         <span className="account-user-avatar">
                             <img
-                                src="assets/images/users/avatar-1.jpg"
+                                src={avtar1}
                                 alt="user-image"
                                 className="rounded-circle"
                             />
@@ -44,14 +44,10 @@ function Navbar() {
                             <i className="mdi mdi-account-circle me-1" />
                             <span>My Account</span>
                         </Link>
-                        {/* item*/}
                         <Link href="javascript:void(0);" className="dropdown-item notify-item">
                             <i className="mdi mdi-account-edit me-1" />
                             <span>Settings</span>
                         </Link>
-                        {/* item*/}
-                        
-                        {/* item*/}
                         <Link href="javascript:void(0);" className="dropdown-item notify-item">
                             <i className="mdi mdi-logout me-1" />
                             <span>Logout</span>
