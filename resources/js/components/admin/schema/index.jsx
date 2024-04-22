@@ -4,4 +4,8 @@ export const LoginSchema = Yup.object({
     password:Yup.string().min(8).max(8).required("Password is required"),
 });
 
+
+export const userCreate = Yup.object({
+
+});
 export const REACT_APP_API='http://127.0.0.1:8000/api';
