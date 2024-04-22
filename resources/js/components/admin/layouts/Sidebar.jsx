@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import logo from '../../../../../public/assets/images/logo.png';
 import logo_sm from '../../../../../public/assets/images/logo_sm.png';
 import logo_dark from '../../../../../public/assets/images/logo-dark.png';
 import logo_sm_dark from '../../../../../public/assets/images/logo_sm_dark.png';
+import "../../../../../public/assets/css/app.min.css";
 
 function Sidebar() {
     return (

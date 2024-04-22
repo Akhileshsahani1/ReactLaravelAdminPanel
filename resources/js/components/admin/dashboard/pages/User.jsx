@@ -1,18 +1,23 @@
-import React,{useState,useEffect}from "react";
+import React, { useState, useEffect } from "react";
 import { Layout } from "../../layouts/Layout.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { REACT_APP_API } from "../../schema/index.jsx";
 
 function User() {
-    const [users,setUser] = useState([]);
+    const [user, setUsers] = useState([]);
     const token = localStorage.getItem('token');
-    useEffect(()=>{
-        axios.post(`${REACT_APP_API}/getUser`, token).then((res)=>{
-            console.log(res,"console");
-             
-        });
-    },[]);
+
+    useEffect(() => {
+        const headers = { 'Authorization': `Bearer ${token}` };
+        axios.get(`${REACT_APP_API}/getUser`, { headers }).then((res) => {
+
+            console.log(res.data, "console");
+            setUsers(res.data.users.data)
+        }).catch((error) => {
+            console.error('Error fetching user:', error);
+        });;
+    }, []);
 
     return (
         <Layout>
@@ -21,7 +26,7 @@ function User() {
                     <div className="col-12">
                         <div className="page-title-box">
                             <div className="page-title-right">
-                                <Link href="" className="btn btn-sm btn-dark float-end">
+                                <Link to="/dashboard/users/create" className="btn btn-sm btn-dark float-end">
                                     <i className="mdi mdi-plus" /> Add Account User
                                 </Link>
                                 <Link
@@ -61,13 +66,27 @@ function User() {
                                                     </th>
                                                     <th>Account User</th>
                                                     <th>Email</th>
-                                                    <th>Phone</th>
                                                     <th>Enabled</th>
                                                     <th />
                                                 </tr>
                                             </thead>
                                             <tbody>
-
+                                           
+                                                {user.map((user) => (         
+                                                       <tr key={user.id}>
+                                                       <td>
+                                                           <div class="form-check">
+                                                               <input type="checkbox" class="form-check-input checkbox-row"
+                                                                   name="rows" 
+                                                                   value={user.id} />
+                                                                   <label class="form-check-label">&nbsp;</label>
+                                                           </div>
+                                                       </td>
+                                                       <td>{user.name}</td>
+                                                       <td>{user.email}</td>
+                                                   </tr>
+                                            ))}
+                                    
                                             </tbody>
                                         </table>
                                     </div>

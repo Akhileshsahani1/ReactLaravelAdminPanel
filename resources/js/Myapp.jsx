@@ -6,6 +6,8 @@ import { Layout } from "./components/admin/layouts/Layout.jsx";
 import User from "./components/admin/dashboard/pages/User.jsx";
 import Content from "./components/admin/layouts/Content.jsx";
 import { createRoot } from 'react-dom/client'; 
+import AddUser from "./components/admin/dashboard/pages/users/Adduser.jsx";
+
 
 export default function Myapp(props) {
     const [token, setToken] = useState("");
@@ -34,6 +36,7 @@ export default function Myapp(props) {
                 <Route path="/" element={<PublicRoute><Login setToken={setToken} /></PublicRoute>} />
                 <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
                 <Route path="/dashboard/users" element={<PrivateRoute><User /></PrivateRoute>} />
+                <Route path="/dashboard/users/create" element={<PrivateRoute><AddUser /></PrivateRoute>} />
             </Routes>
         </Router>
     );

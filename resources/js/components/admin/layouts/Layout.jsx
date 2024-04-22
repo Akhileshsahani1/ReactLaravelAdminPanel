@@ -3,6 +3,7 @@ import * as React from 'react';
 import Sidebar from './Sidebar.jsx';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
+import { Outlet } from 'react-router-dom';
 
 export const Layout = ({ children }) => {
     
@@ -15,6 +16,7 @@ export const Layout = ({ children }) => {
                    {children}
                 </div>
                 <Footer />
+            
             </div>
         </div>
     );
