@@ -16,7 +16,6 @@ export const Layout = ({ children }) => {
                    {children}
                 </div>
                 <Footer />
-            
             </div>
         </div>
     );

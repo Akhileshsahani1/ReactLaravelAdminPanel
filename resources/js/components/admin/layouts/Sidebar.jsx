@@ -13,7 +13,7 @@ import "../../../../../public/assets/css/app-dark.min.css";
 function Sidebar() {
     return (
         <div className="leftside-menu">
-            <Link to="/" className="logo text-center logo-light">
+            <Link to="/dashboard" className="logo text-center logo-light">
                 <span className="logo-lg">
                     <img src={logo} alt="" height={16} />
                 </span>
@@ -21,7 +21,7 @@ function Sidebar() {
                     <img src={logo_sm} alt="" height={16} />
                 </span>
             </Link>
-            <Link to="/" className="logo text-center logo-dark">
+            <Link to="//dashboard" className="logo text-center logo-dark">
                 <span className="logo-lg">
                     <img src={logo_dark} alt="" height={16} />
                 </span>

@@ -52,35 +52,35 @@ function Login({ setToken }) {
                 name="description"
             />
             <meta content="Coderthemes" name="author" />
-            <link rel="shortcut icon" href="assets/images/favicon.ico" />
-            <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+            <link rel="shortcut icon" to="assets/images/favicon.ico" />
+            <link to="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
             <link
-                href="assets/css/app.min.css"
+                to="assets/css/app.min.css"
                 rel="stylesheet"
                 type="text/css"
-                id="light-style"
+                // id="light-style"
             />
             <link
-                href="assets/css/app-dark.min.css"
+                to="assets/css/app-dark.min.css"
                 rel="stylesheet"
                 type="text/css"
-                id="dark-style"
+                // id="dark-style"
             />
             <div className="auth-fluid">
                 <div className="auth-fluid-form-box">
                     <div className="align-items-center d-flex h-100">
                         <div className="card-body">
                             <div className="auth-brand text-center text-lg-start">
-                                <a href="index.html" className="logo-dark">
+                                <Link to="index.html" className="logo-dark">
                                     <span>
                                         <img src="assets/images/logo-dark.png" alt="" height={18} />
                                     </span>
-                                </a>
-                                <a href="index.html" className="logo-light">
+                                </Link>
+                                <Link to="index.html" className="logo-light">
                                     <span>
                                         <img src="assets/images/logo.png" alt="" height={18} />
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                             <h4 className="mt-0">Sign In</h4>
                             <p className="text-muted mb-4">
@@ -104,9 +104,9 @@ function Login({ setToken }) {
                                     {errors.email && touched.email ? <div className="text-danger">{errors.email}</div> : null}
                                 </div>
                                 <div className="mb-3">
-                                    <a href="pages-recoverpw-2.html" className="text-muted float-end">
+                                    <Link to="pages-recoverpw-2.html" className="text-muted float-end">
                                         <small>Forgot your password?</small>
-                                    </a>
+                                    </Link>
                                     <label htmlFor="password" className="form-label">
                                         Password
                                     </label>
@@ -145,36 +145,36 @@ function Login({ setToken }) {
                                     <p className="text-muted font-16">Sign in with</p>
                                     <ul className="social-list list-inline mt-3">
                                         <li className="list-inline-item">
-                                            <a
-                                                href="javascript: void(0);"
+                                            <Link
+                                                to="javascript: void(0);"
                                                 className="social-list-item border-primary text-primary"
                                             >
                                                 <i className="mdi mdi-facebook" />
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="list-inline-item">
-                                            <a
-                                                href="javascript: void(0);"
+                                            <Link
+                                                to="javascript: void(0);"
                                                 className="social-list-item border-danger text-danger"
                                             >
                                                 <i className="mdi mdi-google" />
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="list-inline-item">
-                                            <a
-                                                href="javascript: void(0);"
+                                            <Link
+                                                to="javascript: void(0);"
                                                 className="social-list-item border-info text-info"
                                             >
                                                 <i className="mdi mdi-twitter" />
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="list-inline-item">
-                                            <a
-                                                href="javascript: void(0);"
+                                            <Link
+                                                to="javascript: void(0);"
                                                 className="social-list-item border-secondary text-secondary"
                                             >
                                                 <i className="mdi mdi-github" />
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -182,9 +182,9 @@ function Login({ setToken }) {
                             <footer className="footer footer-alt">
                                 <p className="text-muted">
                                     Don't have an account?
-                                    <a href="pages-register-2.html" className="text-muted ms-1">
+                                    <Link to="pages-register-2.html" className="text-muted ms-1">
                                         <b>Sign Up</b>
-                                    </a>
+                                    </Link>
                                 </p>
                             </footer>
                         </div>

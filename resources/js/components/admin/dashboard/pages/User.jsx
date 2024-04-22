@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { REACT_APP_API } from "../../schema/index.jsx";
 import Filter from "./users/Filter.jsx";
+import avtar1 from '../../../../../../public/assets/images/users/avatar-1.jpg';
+
 
 function User() {
     const [user, setUsers] = useState([]);
-    const token = localStorage.getItem('token');
-
+    
     useEffect(() => {
+        const token = localStorage.getItem('token');
         const headers = { 'Authorization': `Bearer ${token}` };
         axios.get(`${REACT_APP_API}/getUser`, { headers }).then((res) => {
-
-            console.log(res.data, "console");
             setUsers(res.data.users.data)
         }).catch((error) => {
             console.error('Error fetching user:', error);
@@ -31,7 +31,7 @@ function User() {
                                     <i className="mdi mdi-plus" /> Add Account User
                                 </Link>
                                 <Link
-                                    href="javascript:void(0)"
+                                    to=""
                                     className="btn btn-sm btn-danger float-end me-1"
                                     style={{ display: "none" }}
                                     id="delete-all"
@@ -43,7 +43,7 @@ function User() {
                         </div>
                     </div>
                 </div>
-                 <Filter />
+                 <Filter setUsers={setUsers}/>
                 <div className="row">
                     <div className="col-12">
                         <div className="card">
@@ -68,7 +68,7 @@ function User() {
                                                     </th>
                                                     <th>Account User</th>
                                                     <th>Email</th>
-                                                    <th>Enabled</th>
+                                                    <th>Avtar</th>
                                                     <th />
                                                 </tr>
                                             </thead>
@@ -77,15 +77,16 @@ function User() {
                                                 {user.map((user) => (         
                                                        <tr key={user.id}>
                                                        <td>
-                                                           <div class="form-check">
-                                                               <input type="checkbox" class="form-check-input checkbox-row"
+                                                           <div className="form-check">
+                                                               <input type="checkbox" className="form-check-input checkbox-row"
                                                                    name="rows" 
                                                                    value={user.id} />
-                                                                   <label class="form-check-label">&nbsp;</label>
+                                                                   <label className="form-check-label">&nbsp;</label>
                                                            </div>
                                                        </td>
                                                        <td>{user.name}</td>
                                                        <td>{user.email}</td>
+                                                       <td> <img src={avtar1} alt="" height={40} class="rounded-circle"/></td>
                                                    </tr>
                                             ))}
                                     

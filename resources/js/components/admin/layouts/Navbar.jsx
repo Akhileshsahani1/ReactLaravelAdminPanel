@@ -9,7 +9,7 @@ function Navbar() {
                     <Link
                         className="nav-link dropdown-toggle arrow-none "
                         data-bs-toggle="dropdown"
-                        href="#"
+                        to=""
                         role="button"
                         aria-haspopup="false"
                         aria-expanded="false"
@@ -22,7 +22,7 @@ function Navbar() {
                     <Link
                         className="nav-link dropdown-toggle nav-user arrow-none me-0"
                         data-bs-toggle="dropdown"
-                        href="#"
+                        to=""
                         role="button"
                         aria-haspopup="false"
                         aria-expanded="false"
@@ -40,15 +40,15 @@ function Navbar() {
                         </span>
                     </Link>
                     <div className="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                        <Link href="javascript:void(0);" className="dropdown-item notify-item">
+                        <Link to="" className="dropdown-item notify-item">
                             <i className="mdi mdi-account-circle me-1" />
                             <span>My Account</span>
                         </Link>
-                        <Link href="javascript:void(0);" className="dropdown-item notify-item">
+                        <Link to="" className="dropdown-item notify-item">
                             <i className="mdi mdi-account-edit me-1" />
                             <span>Settings</span>
                         </Link>
-                        <Link href="javascript:void(0);" className="dropdown-item notify-item">
+                        <Link to="" className="dropdown-item notify-item">
                             <i className="mdi mdi-logout me-1" />
                             <span>Logout</span>
                         </Link>

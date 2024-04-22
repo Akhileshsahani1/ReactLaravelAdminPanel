@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {}
+
 function UserList() {
 
     return (
@@ -9,11 +9,11 @@ function UserList() {
                     <div className="col-12">
                         <div className="page-title-box">
                             <div className="page-title-right">
-                                <Link href="" className="btn btn-sm btn-dark float-end">
+                                <Link to="" className="btn btn-sm btn-dark float-end">
                                     <i className="mdi mdi-plus" /> Add Account User
                                 </Link>
                                 <Link
-                                    href="javascript:void(0)"
+                                    to=""
                                     className="btn btn-sm btn-danger float-end me-1"
                                     style={{ display: "none" }}
                                     id="delete-all"
